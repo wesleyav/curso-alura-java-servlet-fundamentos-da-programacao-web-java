@@ -45,11 +45,13 @@ public class NovaEmpresaServlet extends HttpServlet {
 
 		Banco banco = new Banco();
 		banco.adiciona(empresa);
+		
+		response.sendRedirect("listaEmpresas");
 
 		// Chamar o JSP
-		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
+//		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
 		request.setAttribute("empresa", empresa.getNome());
-		rd.forward(request, response);
+//		rd.forward(request, response);
 	}
 
 }
